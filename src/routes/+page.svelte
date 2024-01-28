@@ -7,7 +7,17 @@
 
 <script>
     import { onMount } from 'svelte';
-    import { getAdvice } from './utils/+page.js';
+    
+    async function getAdvice() {
+        const res = await fetch('https://api.adviceslip.com/advice');
+        if (!res.ok) {
+            throw new Error(`An error has occured: ${res.status}`);
+        } else {
+            let result = await res.json();
+            console.log(result)
+            return result
+        }
+    }
 
     // @ts-nocheck
     let active = false;
@@ -30,9 +40,11 @@
     function hoverEnter() {
         active = true;
     }
+    
     function hoverLeave() {
         active = false;
     }
+
     onMount(() => getAdvice())
 </script>
 
