@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dependencies": "^0.0.1"
+		"dependencies": "^0.0.1",
+		"svelte-media-queries": "^1.6.2"
 	}
 }
