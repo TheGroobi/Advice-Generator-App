@@ -7,7 +7,7 @@
 
 <script>
     import { onMount } from 'svelte';
-    
+
     async function getAdvice() {
         const res = await fetch('https://api.adviceslip.com/advice');
         if (!res.ok) {
