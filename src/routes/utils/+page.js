@@ -5,6 +5,8 @@ export async function getAdvice() {
     if (!res.ok) {
         throw new Error(`An error has occured: ${res.status}`);
     } else {
-        return await res.json();
+        const data = await res.json();
+        console.log(data)
+        return data
     }
 }
